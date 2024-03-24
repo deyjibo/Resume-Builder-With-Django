@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV maker - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .borde {
+            border: solid 2px blue;
+            margin-top: 24px;
+            margin-bottom: 11px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 127px;
+        }
+
+        .image {
+            height: 60px;
+            width: 60px;
+            margin-right: 6px;
+            border: 3px solid white;
+        }
+
+        .ml {
+            margin-left: 130px !important;
+        }
+
+
+        .top-10 {
+            top: 23rem;
+        }
+
+        .my-3 {
+            margin-top: 4rem !important;
+            margin-bottom: 1rem !important;
+            margin-left: 1rem !important;
+        }
+
+        .row {
+            flex-shrink: 0;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-top: var(--bs-gutter-y);
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary border border-primary">
+        <div class="container-fluid m-4">
+            <img src="{% static '1.jpg'%}" alt=""
+                class="position-absolute top-50 start-50 translate-middle navbar-brand fs-1 mb-2 image ">
+            <h1 class="position-absolute top-50 start-50 translate-middle navbar-brand fs-1 mb-2 ml ">CV Maker</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+    </nav>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congrates! Your CV is ready!!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="container borde">
+        <form method="" enctype="multipart/form-data" action="pdf/">
+            <h1 class="text-center fw-bold my-4">RESUME</h1>
+            <div class="my-3">
+                <h3 class="fw-bold ms-3">PERSONAL DETAILS</h3>
+                <dl class="row ms-2">
+                    <dt class="col-sm-3">Name</dt>
+                    <dd class="col-sm-9">{{Name}}</dd>
+
+                    <dt class="col-sm-3">Email</dt>
+                    <dd class="col-sm-9">{{email}}</dd>
+
+                    <dt class="col-sm-3">Contact Number</dt>
+                    <dd class="col-sm-9">{{phone}}</dd>
+
+                    <dt class="col-sm-3 ">Address</dt>
+                    <dd class="col-sm-9">{{add}}</dd>
+
+                    <dt class="col-sm-3 ">Date Of Birth</dt>
+                    <dd class="col-sm-9">{{dob}}</dd>
+
+                    <dt class="col-sm-3 ">Gender</dt>
+                    <dd class="col-sm-9">{{gen}}</dd>
+                    
+                    <dt class="col-sm-3 ">Mother Tounge</dt>
+                    <dd class="col-sm-9">{{lang}}</dd>
+
+                </dl>
+                <hr class="border border-danger border-2 opacity-50">
+
+
+                <h3 class="fw-bold ms-3">EDUCATION</h3>
+                <dl class="row ms-2 ">
+                    <dt class="col-sm-3 mb-3">Year</dt>
+                    <dt class="col-sm-3 mb-3">College/School</dt>
+                    <dt class="col-sm-3 mb-3">Course</dt>
+                    <dt class="col-sm-3 mb-3">Percentage</dt>
+                    <dd class="col-sm-3 mb-3">{{year}}</dd>
+                    <dd class="col-sm-3 mb-3">{{university}}</dd>
+                    <dd class="col-sm-3 mb-3">{{course}}</dd>
+                    <dd class="col-sm-3 mb-3">{{perc}}</dd>
+                    <dd class="col-sm-3 mb-3">{{year1}}</dd>
+                    <dd class="col-sm-3 mb-3">{{college}}</dd>
+                    <dd class="col-sm-3 mb-3">{{course1}}</dd>
+                    <dd class="col-sm-3 mb-3">{{perc1}}</dd>
+                </dl>
+                <hr class="border border-danger border-2 opacity-50">
+                <h3 class="fw-bold ms-3">SKILLS</h3>
+                <dl class="row ms-2">
+                    <dd class="col-sm-10">{{skills}}</dd>
+                </dl>
+                <hr class="border border-danger border-2 opacity-50">
+
+                <h3 class="fw-bold ms-3">Career Objective</h3>
+                <dl class="row ms-2">
+                    <dd class="col-sm-10">{{career}}</dd>
+                </dl>
+                <hr class="border border-danger border-2 opacity-50">
+                <h3 class="fw-bold ms-3">Strength</h3>
+                <dl class="row ms-2">
+                    <dd class="col-sm-10">{{strength}}</dd>
+                </dl>
+                <hr class="border solid border-danger border-2 opacity-50">
+                <h3 class="fw-bold ms-3">Area Of Interest</h3>
+                <dl class="row ms-2">
+                    <dd class="col-sm-10">{{area}}</dd>
+                </dl>
+                <hr class="border border-danger border-2 opacity-50">
+
+                <dl class="row ms-2">
+                    <dd class="col-sm-10 mt-2">“I hereby declare that all the details mentioned above are in accordance
+                        with
+                        the truth and fact as per my knowledge and I hold the responsibility for the correctness of the
+                        above-mentioned particulars.”
+                    </dd>
+                </dl>
+                <dt class="col-sm-11 text-end mb-5">{{Name}}
+                </dt>
+            </div>
+
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
